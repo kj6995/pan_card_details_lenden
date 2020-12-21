@@ -87,7 +87,12 @@ app.post("/upload", (req, res) => {
 					await worker.terminate();
 				} catch (err) {
 					console.log(err);
-					res.send("Cannot Identify the Card");
+					res.json({
+						Name: "",
+						FatherName: "",
+						DOB: "",
+						PAN: "",
+					})
 				}
 			})();
 
